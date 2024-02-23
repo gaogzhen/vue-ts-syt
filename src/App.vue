@@ -7,7 +7,7 @@
     <HospitalTop/>
     <!-- 展示路由组件区域 -->
     <div class="content">
-      xxxxx
+      <router-view></router-view>
     </div>
     <!-- 底部组件 -->
     <HospitalBottom/>
