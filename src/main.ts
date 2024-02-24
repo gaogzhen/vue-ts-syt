@@ -9,6 +9,7 @@ import HospitalBottom  from '@/components/hospital_bottom/index.vue'
 import router from '@/router'
 // 引入element-plus插件
 import ElementPlus from 'element-plus'
+import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 import 'element-plus/dist/index.css'
 
 
@@ -19,6 +20,8 @@ app.component('HospitalBottom', HospitalBottom)
 // 安装vue-router
 app.use(router)
 // 安装element-plus插件
-app.use(ElementPlus)
+app.use(ElementPlus, {
+  locale: zhCn,
+})
 
 app.mount('#app')
