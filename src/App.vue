@@ -1,6 +1,3 @@
-<script setup lang="ts">
-</script>
-
 <template>
   <div class="container">
     <!-- 顶部全局组件 -->
@@ -13,6 +10,9 @@
     <HospitalBottom/>
   </div>
 </template>
+
+<script setup lang="ts">
+</script>
 
 <style scoped lang="scss">
 .container {
