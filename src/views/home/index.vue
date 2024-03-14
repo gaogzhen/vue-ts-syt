@@ -60,8 +60,6 @@ const getHospitalList = async () => {
     hospitalList.value = data.content
     total = data.totalElements
   }
-  console.log('ret', result);
-
 }
 
 // 分页器页码变化回调

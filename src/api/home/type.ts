@@ -43,7 +43,7 @@ export interface HospitalData {
 export type Content = HospitalData[]
 
 // 医院列表接口返回数据ts类型
-export interface HospitalListData extends ResponseData{
+export interface HospitalListData extends ResponseData {
   data: {
     content: Content,
     pageable: {
@@ -72,3 +72,24 @@ export interface HospitalListData extends ResponseData{
     first: boolean,
     empty: boolean
   }
+
+  // 医院字典ts类型
+  export interface HosDict {
+    "id": number,
+    "createTime": string,
+    "updateTime": string,
+    "isDeleted": number,
+    "param": {},
+    "parentId": number,
+    "name": string,
+    "value": string,
+    "dictCode": string,
+    "hasChildren": boolean
+
+}
+// 字典数组
+export type DictArr = HosDict[]
+// 字典接口返回数据ts类型
+export interface HospitalDictData extends ResponseData {
+  data: DictArr
+}
