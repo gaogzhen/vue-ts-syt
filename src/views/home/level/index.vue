@@ -42,8 +42,11 @@ const getLevelList = async () => {
 const changeHighlight = (level: string) => {  
   // 点击那个等级 响应式高亮赋值那个level值
   highlightFlag.value = level
-  
+  // 触发自定义事件：将医院等级参数回传给父组件
+  $emit('getLevel', level)
 }
+
+let $emit = defineEmits(['getLevel'])
 </script>
 
 <style scoped lang="scss">

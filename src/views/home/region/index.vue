@@ -41,7 +41,11 @@ const getRegionList = async () => {
 const changeHighlight = (region: string) => {  
   // 点击那个区域 响应式高亮赋值那个region值
   highlightFlag.value = region
+  // 获取医院地区参数回传
+  $emit('getRegion', region)
 }
+
+let $emit = defineEmits(['getRegion'])
 </script>
 
 <script lang="ts">

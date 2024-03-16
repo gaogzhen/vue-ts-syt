@@ -2,7 +2,7 @@
   <div class="top">
     <div class="content">
       <!-- 左侧 -->
-      <div class="left">
+      <div class="left" @click="goHome">
         <img src="../../assets/images/logo.png" alt="">
         <p>尚医通 预约挂号统一平台</p>
       </div>
@@ -16,6 +16,14 @@
 </template>
 
 <script setup lang="ts">
+import { useRouter } from "vue-router";
+
+let $router = useRouter()
+
+// 跳转首页
+const goHome = () => {
+  $router.push({path: '/home'})
+}
 </script>
 
 <style scoped lang="scss">
@@ -37,6 +45,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
         img {
           width: 50px;
           height: 50px;
