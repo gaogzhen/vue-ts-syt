@@ -22,7 +22,9 @@
           :background="true" layout="prev, pager, next, jumper,->, sizes, total" :total="total"
           @current-change="currentChange" @size-change="sizeChange" />
       </el-col>
-      <el-col :span="4">345</el-col>
+      <el-col :span="4">
+        <Tip />
+      </el-col>
     </el-row>
   </div>
 </template>
@@ -38,6 +40,8 @@ import Level from './level/index.vue'
 import Region from './region/index.vue'
 // 引入医院列表组件
 import Card from './card/index.vue'
+// 引入右侧提示组件
+import Tip from './tip/index.vue';
 
 // 分页器所需数据
 import { onMounted, ref } from "vue";

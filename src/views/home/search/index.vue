@@ -47,7 +47,7 @@ const fetchData = async (keyword: string, cb: any) => {
 // 选中回调：跳转医院详情页
 const goDetail = (item: any) => {
   // 跳转医院详情页
-  $router.push({path: '/hospital'})
+  $router.push({path: '/hospital/register', query: {hoscode: item.hoscode}})
   
 }
 

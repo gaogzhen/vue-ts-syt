@@ -34,7 +34,7 @@ let props = defineProps(['hospitalInfo'])
 // 跳转医院详情
 const goDetail = () => {
   // 携带参数
-  $router.push({path: '/hospital'})
+  $router.push({path: '/hospital/register', query: {hoscode: props.hospitalInfo.hoscode}})
 }
 </script>
 
