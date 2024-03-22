@@ -11,17 +11,23 @@ import router from '@/router'
 import ElementPlus from 'element-plus'
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 import 'element-plus/dist/index.css'
+// 引入pinia
+import pinia from '@/store'
+
+
 
 
 const app = createApp(App)
 
 app.component('HospitalTop', HospitalTop)
 app.component('HospitalBottom', HospitalBottom)
-// 安装vue-router
+// 启用vue-router
 app.use(router)
-// 安装element-plus插件
+// 启用element-plus插件
 app.use(ElementPlus, {
   locale: zhCn,
 })
+// 启用pinia
+app.use(pinia)
 
 app.mount('#app')

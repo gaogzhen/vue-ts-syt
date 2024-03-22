@@ -41,10 +41,12 @@ export interface HospitalData {
   "bookingRule": null
 }
 
+export interface HospitalDetail {
+  bookingRule: Rule,
+  hospital: HospitalData
+}
+
 // 医院详情数据类型
-export interface HospitalDetail extends ResponseData{
-  data: {
-    bookingRule: Rule,
-    hospital: HospitalData
-  }
+export interface HospitalDetailResponse extends ResponseData{
+  data: HospitalDetail
 }

@@ -40,6 +40,8 @@
 </template>
 
 <script setup lang='ts'>
+import { useRouter, useRoute } from 'vue-router';
+import { onMounted } from "vue";
 import {
   Document,
   Menu as IconMenu,
@@ -48,16 +50,25 @@ import {
   Search,
   HomeFilled
 } from '@element-plus/icons-vue'
-import { useRouter, useRoute } from 'vue-router';
+
+import useDetailStore from '@/store/modules/hospitalDetail';
 
 let $router = useRouter()
 let $route = useRoute()
+// 获取仓库
+let detailStore = useDetailStore()
 
 // 医院信息子路由切换
 const changeActive = (path: string) => {
   // 跳转到对应的二级路由
   $router.push({path})
 }
+
+// 页面挂载，请求医院详情数据
+onMounted(() => {
+  detailStore.getHospitalDetail($route.query.hoscode)
+})
+
 </script>
 
 <style scoped lang="scss">

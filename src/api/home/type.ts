@@ -72,19 +72,20 @@ export interface HospitalListData extends ResponseData {
     first: boolean,
     empty: boolean
   }
+}
 
-  // 医院字典ts类型
-  export interface HosDict {
-    "id": number,
-    "createTime": string,
-    "updateTime": string,
-    "isDeleted": number,
-    "param": {},
-    "parentId": number,
-    "name": string,
-    "value": string,
-    "dictCode": string,
-    "hasChildren": boolean
+// 医院字典ts类型
+export interface HosDict {
+  "id": number,
+  "createTime": string,
+  "updateTime": string,
+  "isDeleted": number,
+  "param": {},
+  "parentId": number,
+  "name": string,
+  "value": string,
+  "dictCode": string,
+  "hasChildren": boolean
 
 }
 // 字典数组
