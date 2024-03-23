@@ -4,28 +4,40 @@
     <!-- 左侧导航区域 -->
     <div class="menu">
       <div class="top">
-        <el-icon><HomeFilled /></el-icon>
+        <el-icon>
+          <HomeFilled />
+        </el-icon>
         <span>/ 医院信息</span>
       </div>
       <el-menu default-active="$route.path" class="el-menu-vertical-demo">
         <el-menu-item index="/hospital/register" @click="changeActive('/hospital/register')">
-          <el-icon><Document /></el-icon>
+          <el-icon>
+            <Document />
+          </el-icon>
           <span>预约挂号</span>
         </el-menu-item>
         <el-menu-item index="/hospital/detail" @click="changeActive('/hospital/detail')">
-          <el-icon><IconMenu /></el-icon>
+          <el-icon>
+            <IconMenu />
+          </el-icon>
           <span>医院详情</span>
         </el-menu-item>
         <el-menu-item index="/hospital/notice" @click="changeActive('/hospital/notice')">
-          <el-icon><Setting /></el-icon>
+          <el-icon>
+            <Setting />
+          </el-icon>
           <span>预约须知</span>
         </el-menu-item>
         <el-menu-item index="/hospital/close" @click="changeActive('/hospital/close')">
-          <el-icon><InfoFilled /></el-icon>
+          <el-icon>
+            <InfoFilled />
+          </el-icon>
           <span>停诊信息</span>
         </el-menu-item>
         <el-menu-item index="/hospital/search" @click="changeActive('/hospital/search')">
-          <el-icon><Search /></el-icon>
+          <el-icon>
+            <Search />
+          </el-icon>
           <span>查询/取消</span>
         </el-menu-item>
       </el-menu>
@@ -58,15 +70,18 @@ let $route = useRoute()
 // 获取仓库
 let detailStore = useDetailStore()
 
-// 医院信息子路由切换
+//左侧菜单点击事件的回调
 const changeActive = (path: string) => {
-  // 跳转到对应的二级路由
-  $router.push({path})
-}
+  //跳转到对应二级路由
+  $router.push({ path, query: { hoscode: $route.query.hoscode } });
+};
 
-// 页面挂载，请求医院详情数据
+
 onMounted(() => {
+  // 请求医院详情数据
   detailStore.getHospitalDetail($route.query.hoscode)
+  //获取某一个医院科室的数据
+  detailStore.getDeparment($route.query.hoscode as string);
 })
 
 </script>
@@ -80,7 +95,8 @@ onMounted(() => {
     display: flex;
     flex-direction: column;
     align-items: center;
-    .top{
+
+    .top {
       color: #7f7f7f;
     }
   }
