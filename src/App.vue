@@ -8,10 +8,16 @@
     </div>
     <!-- 底部组件 -->
     <HospitalBottom/>
+    <!-- 登录组件 -->
+    <Login v-if="userStore.visiable" />
   </div>
 </template>
 
 <script setup lang="ts">
+import Login from '@/components/login/index.vue';
+//引入用户仓库
+import useUserStore from "@/store/modules/user";
+let userStore = useUserStore();
 </script>
 
 <style scoped lang="scss">
